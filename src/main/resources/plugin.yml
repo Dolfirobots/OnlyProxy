@@ -2,8 +2,8 @@ name: OnlyProxy
 version: '1.0'
 main: net.dolfirobots.Main
 api-version: '1.21'
-authors: [Dolfirobots]
-description: A little Proxy Secuity Plugin
+authors: [ Dolfirobots ]
+description: A little Proxy Security Plugin
 website: Dolfirobots.net
 commands:
   onlyproxy:
