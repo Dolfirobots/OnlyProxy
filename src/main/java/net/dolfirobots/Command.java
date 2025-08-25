@@ -21,7 +21,7 @@ public class Command implements CommandExecutor, TabCompleter {
             if (strings[0].equalsIgnoreCase("version")) {
                 // TODO: Adding github in this Plugin
             } else {
-                // TODO: Adding here a fallback msg
+                commandSender.sendMessage("§cUsage: §e/onlyproxy [reload/version]");
             }
         }
         return true;
