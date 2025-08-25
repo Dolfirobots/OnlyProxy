@@ -19,7 +19,15 @@ public class Command implements CommandExecutor, TabCompleter {
                 commandSender.sendMessage("§aSuccessfully reloaded!");
             } else
             if (strings[0].equalsIgnoreCase("version")) {
-                // TODO: Adding github in this Plugin
+                commandSender.sendMessage("§eFetching lasted version...");
+                String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
+                commandSender.sendMessage("Lasted version: " + lastedVersion + " Your version: " + Main.getInstance().getDescription().getVersion());
+                if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
+                    commandSender.sendMessage("§aOnlyProxy is up to date! (:");
+                } else {
+                    commandSender.sendMessage("§cOnlyProxy is not up to date! ):");
+                    commandSender.sendMessage("Please update it HERE: https://github.com/Dolfirobots/OnlyProxy/releases/" + lastedVersion);
+                }
             } else {
                 commandSender.sendMessage("§cUsage: §e/onlyproxy [reload/version]");
             }
