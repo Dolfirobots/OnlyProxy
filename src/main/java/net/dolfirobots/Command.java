@@ -29,7 +29,7 @@ public class Command implements CommandExecutor, TabCompleter {
                     commandSender.sendMessage("Please update it HERE: https://github.com/Dolfirobots/OnlyProxy/releases/" + lastedVersion);
                 }
             } else {
-                commandSender.sendMessage("§cUsage: §e/onlyproxy [reload/version]");
+                commandSender.sendMessage("§cUsage: §e/" + s + " [reload/version]");
             }
         }
         return true;
