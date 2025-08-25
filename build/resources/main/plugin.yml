@@ -1,5 +1,5 @@
 name: OnlyProxy
-version: ${version}
+version: 1.0
 main: net.dolfirobots.Main
 api-version: '1.21'
 authors: [ Dolfirobots ]

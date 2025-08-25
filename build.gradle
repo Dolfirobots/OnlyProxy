@@ -51,5 +51,6 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+        expand(project.properties)
     }
 }
