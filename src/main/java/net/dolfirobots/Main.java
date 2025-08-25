@@ -86,6 +86,13 @@ public final class Main extends JavaPlugin implements Listener {
             sendMessage("§cError by creating the logs folder!");
             return;
         }
+        try {
+            if (!logFile.exists() && !logFile.createNewFile()) {
+                sendMessage("§cError by creating the logs file!");
+            }
+        } catch (Exception e) {
+            sendMessage("§cError by creating the logs file: " + e.getMessage());
+        }
         String lastLine = "";
 
         try (BufferedReader obj = new BufferedReader(new FileReader(logFile))) {
