@@ -41,6 +41,7 @@ public class Command implements CommandExecutor, TabCompleter {
         List<String> list = new ArrayList<>();
         if (strings.length == 1) {
             list.add("reload");
+            list.add("version");
         }
         return list;
     }
