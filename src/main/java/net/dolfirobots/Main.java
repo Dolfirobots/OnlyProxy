@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import static org.bukkit.Bukkit.getConsoleSender;
 
@@ -18,12 +19,15 @@ public final class Main extends JavaPlugin implements Listener {
 
     public static File logFolder = new File("plugins/OnlyProxy", "logs");
 
+    private static Main main;
+
     public static void sendMessage(String message) {
-        getConsoleSender().sendMessage(Config.prefix + message);
+        getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Config.prefix()) + message);
     }
 
     @Override
     public void onEnable() {
+        main = this;
         sendMessage("§a--------------------------------------§r");
         sendMessage("§a     Only Proxy Plugin was enabled!   §r");
         sendMessage("§a                 Paper                §r");
@@ -34,27 +38,18 @@ public final class Main extends JavaPlugin implements Listener {
         }
         sendMessage("§a                                      §r");
         sendMessage("§a--------------------------------------§r");
-        Config.reloadConfig();
+
+        Config.reload();
+
         getServer().getPluginManager().registerEvents(this, this);
         getCommand("onlyproxy").setExecutor(new Command());
         getCommand("onlyproxy").setTabCompleter(new Command());
-        if (!Config.logLevel.equalsIgnoreCase("OFF")) {
+
+        if (!Config.getString("log.logging").equalsIgnoreCase("OFF")) {
             if (!logFolder.exists()) {
                 if (!logFolder.mkdir()) {
                     sendMessage("§cError by creating the logs folder!");
                 }
-            }
-            try {
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                String dateString = formatter.format(new Date());
-                File logFile = new File(logFolder, "log_" + dateString + ".log");
-                if (!logFile.exists()) {
-                    if (!logFile.createNewFile()) {
-                        sendMessage("§cError by creating the log file");
-                    }
-                }
-            } catch (IOException e) {
-                sendMessage("§cError by creating the log file: " + e.getMessage());
             }
         }
     }
@@ -73,16 +68,16 @@ public final class Main extends JavaPlugin implements Listener {
     }
 
 
-    public static void createLog(PlayerLoginEvent event, Boolean success) {
-        if (Config.logLevel.equalsIgnoreCase("OFF") || (Config.logLevel.equalsIgnoreCase("OTHER") && !success)) {
+    public static void createLog(PlayerLoginEvent event, Boolean passed) {
+        if (Config.getString("log.logging").equalsIgnoreCase("OFF") || (Config.getString("log.logging").equalsIgnoreCase("OTHER") && !passed)) {
             return;
         }
-        String playerName = "Playername: " + event.getPlayer().getName();
-        String playerIP = "Player IP: " + event.getRealAddress();
-        String proxyIP = "Proxy IP: " + event.getRealAddress().getHostAddress();
+        Player player = event.getPlayer();
+
         String timestamp = new SimpleDateFormat("HH:mm:ss").format(new Date());
+
         File logFile = new File(logFolder, "log_" + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + ".log");
-        if (!logFile.getParentFile().mkdirs()) {
+        if (!logFolder.exists() && !logFile.getParentFile().mkdirs()) {
             sendMessage("§cError by creating the logs folder!");
             return;
         }
@@ -107,12 +102,11 @@ public final class Main extends JavaPlugin implements Listener {
             if (!lastLine.replace(" ", "").isEmpty()) {
                 writer.newLine();
             }
-            writer.write( "[" + timestamp + "] [" + (success ? "PASSED" : "BLOCKED") + "] " + (Config.logPlayerNames ? playerName + " | " : "") + (Config.logIPs ? playerIP + " | " : "") + (Config.logProxyIPs ? proxyIP : ""));
-        } catch (IOException e) {
+            writer.write("[" + timestamp + "] [" + (passed ? "PASSED" : "BLOCKED") + "] " + (Config.getBoolean("console.logPlayerName") ? "Player: " + player.getName() + " | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: " + event.getAddress().getHostAddress() + " | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: " + event.getRealAddress().getHostAddress() : ""));
+        } catch (Exception e) {
             sendMessage("§cError by writing to the log file: " + e.getMessage());
         }
     }
-
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerLoginEvent(PlayerLoginEvent event) {
@@ -120,18 +114,25 @@ public final class Main extends JavaPlugin implements Listener {
         String joinedProxyAddress = event.getRealAddress().getHostAddress();
         String joinedProxyHost = event.getRealAddress().getHostName();
         boolean passed = false;
-        if (Config.allowedProxyIPs.contains(joinedProxyHost) || Config.allowedProxyIPs.contains(joinedProxyAddress)) {
+        sendMessage("§e[DEBUG] §7Check allowed: " + Config.getList("proxyIPs"));
+        if (Config.getList("proxyIPs").contains(joinedProxyHost) || Config.getList("proxyIPs").contains(joinedProxyAddress)) {
             passed = true;
         } else {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.translateAlternateColorCodes('&', String.join("\n", Config.getKickMessage)));
+            String kickMsg = ChatColor.translateAlternateColorCodes('&', String.join("\n", (List<String>) Config.getList("kickMessage"))).replace("%prefix%", ChatColor.translateAlternateColorCodes('&', Config.prefix()));
+            int counter = 0;
+            for (String address : (List<String>) Config.getList("proxyIPs")) {
+                counter++;
+                kickMsg = kickMsg.replace("%proxy_" + counter + "%", address);
+            }
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, kickMsg);
         }
         createLog(event, passed);
-        if (!Config.consoleLogLevel.equalsIgnoreCase("OFF")) {
-            if (Config.consoleLogLevel.equalsIgnoreCase("OTHER") && !passed) return;
-            sendMessage("§7[" + (passed ? "§aPASSED" : "§cBLOCKED") + "§7] " + (Config.consoleLogPlayerNames ? "Player: §e" + player.getName() + "§7 | " : "") + (Config.consoleLogIPs ? "Player IP: §e" + joinedProxyHost + "§7 | " : "") + (Config.consoleLogProxyIPs ? "Proxy IP: §e" + joinedProxyAddress : ""));
+        if (!Config.getString("console.logging").equalsIgnoreCase("OFF")) {
+            if (Config.getString("console.logging").equalsIgnoreCase("OTHER") && !passed) return;
+            sendMessage("§7[" + (passed ? "§aPASSED" : "§cBLOCKED") + "§7] " + (Config.getBoolean("console.logPlayerName") ? "Player: §e" + player.getName() + "§7 | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: §e" + event.getAddress().getHostAddress() + "§7 | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: §e" + joinedProxyAddress : ""));
         }
     }
     public static Main getInstance() {
-        return JavaPlugin.getPlugin(Main.class);
+        return main;
     }
 }

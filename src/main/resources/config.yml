@@ -2,21 +2,30 @@
 # Plugin by Dolfirobots
 # MIT licence
 
+# Permissions:
+# onlyproxy.commands : This permission is used to allow the /onlyproxy [reload/version]
+
 # Your allowed proxy IPs
+# If you leave this empty, then are all connections allowed
 proxyIPs:
-  - "123.123.123.123"
-  - "321.321.321.321"
+  - "127.0.0.1"
+  - "0.0.0.0"
 
 # The Prefix of The Plugin
-prefix: "§c§l[PBP] §7"
+prefix: "&7&l[&e&lOnlyProxy&7&l] "
 
 # The kick message
+# You can use the Proxy IPs above like this: %proxy_1% -> 127.0.0.1
+# When you only have 2 Proxy IPs set: %proxy_3% -> %proxy_3%
+# You can access the prefix like that: %prefix% -> &7&l[&e&lOnlyProxy&7&l]
 kickMessage:
+  - "§r"
   - "%prefix%"
   - "§r"
   - "§r"
   - "§cYou must you this Server over %proxy_1% or %proxy_2%!"
   - "§7Need help? Join our Discord: discord.gg/YOUR_DISCORD_INVITE" # Change that here
+  - "§r"
 
 log:
   # Should log joins?
@@ -28,7 +37,7 @@ log:
 
   ### Log details ###
   # Should show IP from player?
-  logIps: true
+  logIPs: true
   # Should show username from player? (Recommended)
   logPlayerName: true
   # Should show joined Proxy IP? (Recommended)
@@ -44,7 +53,7 @@ console:
 
   ### Console log details ###
   # Should show IP from player?
-  logIps: true
+  logIPs: true
   # Should show username from player? (Recommended)
   logPlayerName: true
   # Should show joined Proxy IP? (Recommended)

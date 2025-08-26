@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GitHub {
-
     public static String getLastedReleaseVersion(String user, String repo) {
         try {
             URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases/latest").toURL();
@@ -35,7 +34,6 @@ public class GitHub {
             return "unknown";
         }
     }
-
     public static List<String> getAllReleaseVersions(String user, String repo) {
         List<String> versions = new ArrayList<>();
         try {
