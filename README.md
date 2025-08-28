@@ -41,33 +41,42 @@ Dort kannst du deine Proxy-IP(s) eintragen:
 # Plugin by Dolfirobots
 # MIT licence
 
+# Permissions:
+# onlyproxy.commands : This permission is used to allow the /onlyproxy [reload/version]
+
 # Your allowed proxy IPs
+# If you leave this empty, then are all connections allowed
 proxyIPs:
-  - "123.123.123.123"
-  - "321.321.321.321"
+  - "127.0.0.1"
+  - "0.0.0.0"
 
 # The Prefix of The Plugin
-prefix: "§c§l[PBP] §7"
+prefix: "&7&l[&e&lOnlyProxy&7&l] "
 
 # The kick message
+# You can use the Proxy IPs above like this: %proxy_1% -> 127.0.0.1
+# When you only have 2 Proxy IPs set: %proxy_3% -> %proxy_3%
+# You can access the prefix like that: %prefix% -> &7&l[&e&lOnlyProxy&7&l]
 kickMessage:
+  - "§r"
   - "%prefix%"
   - "§r"
   - "§r"
   - "§cYou must you this Server over %proxy_1% or %proxy_2%!"
   - "§7Need help? Join our Discord: discord.gg/YOUR_DISCORD_INVITE" # Change that here
+  - "§r"
 
 log:
   # Should log joins?
   # "ALL" -> All player connections to this server
-  # "OTHER" -> All attempts to join this Server with a Proxy that is not allowed
+  # "OTHER" -> Only all attempts to join this Server with a not allowed Proxy
   # "OFF" -> Nothing will be logged (Not recommended)
   # If you don't select any of the options, it will automatically be counted as "OFF"
   logging: "ALL"
 
   ### Log details ###
   # Should show IP from player?
-  logIps: true
+  logIPs: true
   # Should show username from player? (Recommended)
   logPlayerName: true
   # Should show joined Proxy IP? (Recommended)
@@ -76,19 +85,25 @@ log:
 console:
   # Should log joins in console?
   # "ALL" -> All player connections to this server
-  # "OTHER" -> All attempts to join this Server with a Proxy that is not allowed
+  # "OTHER" -> Only all attempts to join this Server with a not allowed Proxy
   # "OFF" -> Nothing will be logged (Not recommended)
   # If you don't select any of the options, it will automatically be counted as "ALL"
   logging: "ALL"
 
   ### Console log details ###
   # Should show IP from player?
-  logIps: true
+  logIPs: true
   # Should show username from player? (Recommended)
   logPlayerName: true
   # Should show joined Proxy IP? (Recommended)
   logProxyIPs: true
-````
+```
+---
+## 🛡️ Permissions
+Es gibt eine Permission für die Commands wie `/onlyproxy reload|version`:
+```
+onlyproxy.commands
+```
 
 ---
 

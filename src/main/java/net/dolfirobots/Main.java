@@ -24,19 +24,31 @@ public final class Main extends JavaPlugin implements Listener {
     public static void sendMessage(String message) {
         getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Config.prefix()) + message);
     }
+    public static String centerMessage(String message, int length) {
+        int msgLength = ChatColor.stripColor(message).length();
+        int spaces = (length - msgLength) / 2;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < spaces; i++) sb.append(" ");
+        sb.append(message);
+        return sb.toString();
+    }
 
     @Override
     public void onEnable() {
         main = this;
         sendMessage("§a--------------------------------------§r");
-        sendMessage("§a     Only Proxy Plugin was enabled!   §r");
-        sendMessage("§a                 Paper                §r");
+        sendMessage("§a" + centerMessage("Only Proxy Plugin was enabled!", 38) + "§r");
+        sendMessage("§a" + centerMessage("Paper", 38) + "§r");
         if (getServer().getVersion().contains("1.20") || getServer().getVersion().contains("1.21")) {
-            sendMessage("§a         Version: compatible          §r");
+            sendMessage("§a" + centerMessage("Version: compatible", 38) + "§r");
         } else {
-            sendMessage("§a       Version:§c not compatible§a      §r");
+            sendMessage("§a" + centerMessage("Version:§c not compatible", 38) + "§r");
         }
-        sendMessage("§a                                      §r");
+        String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
+        if (!lastedVersion.equalsIgnoreCase(getDescription().getVersion())) {
+            sendMessage("§c" + centerMessage("There is a new version outside!", 38) + "§r");
+            sendMessage("§c" + centerMessage("Please check with /onlyproxy version", 38) + "§r");
+        }
         sendMessage("§a--------------------------------------§r");
 
         Config.reload();
@@ -56,17 +68,20 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         sendMessage("§a--------------------------------------§r");
-        sendMessage("§a     Only Proxy Plugin was disabled!  §r");
-        sendMessage("§a                 Paper                §r");
+        sendMessage("§a" + centerMessage("Only Proxy Plugin was disabled!", 38) + "§r");
+        sendMessage("§a" + centerMessage("Paper", 38) + "§r");
         if (getServer().getVersion().contains("1.20") || getServer().getVersion().contains("1.21")) {
-            sendMessage("§a         Version: compatible          §r");
+            sendMessage("§a" + centerMessage("Version: compatible", 38) + "§r");
         } else {
-            sendMessage("§a     Version:§c not compatible§a      §r");
+            sendMessage("§a" + centerMessage("Version:§c not compatible", 38) + "§r");
         }
-        sendMessage("§a                                      §r");
+        String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
+        if (!lastedVersion.equalsIgnoreCase(getDescription().getVersion())) {
+            sendMessage("§c" + centerMessage("There is a new version outside!", 38) + "§r");
+            sendMessage("§c" + centerMessage("Please check with /onlyproxy version", 38) + "§r");
+        }
         sendMessage("§a--------------------------------------§r");
     }
-
 
     public static void createLog(PlayerLoginEvent event, Boolean passed) {
         if (Config.getString("log.logging").equalsIgnoreCase("OFF") || (Config.getString("log.logging").equalsIgnoreCase("OTHER") && !passed)) {
@@ -114,7 +129,6 @@ public final class Main extends JavaPlugin implements Listener {
         String joinedProxyAddress = event.getRealAddress().getHostAddress();
         String joinedProxyHost = event.getRealAddress().getHostName();
         boolean passed = false;
-        sendMessage("§e[DEBUG] §7Check allowed: " + Config.getList("proxyIPs"));
         if (Config.getList("proxyIPs").contains(joinedProxyHost) || Config.getList("proxyIPs").contains(joinedProxyAddress)) {
             passed = true;
         } else {

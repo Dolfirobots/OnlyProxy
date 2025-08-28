@@ -20,7 +20,7 @@ public class Config {
     }
     public static String prefix() {
         String prefix = getString("prefix");
-        if (getString("prefix").isEmpty() || getString("prefix") == null) prefix = "&7&l[&e&lOnlyProxy&7&l] ";
+        if (getString("prefix").isEmpty() || getString("prefix") == null) prefix = "&7[&eOnlyProxy&7] ";
         return prefix;
     }
     public static String getString(String path) {

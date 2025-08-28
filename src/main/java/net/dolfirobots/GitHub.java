@@ -5,7 +5,6 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class GitHub {
@@ -34,8 +33,8 @@ public class GitHub {
             return "unknown";
         }
     }
-    public static List<String> getAllReleaseVersions(String user, String repo) {
-        List<String> versions = new ArrayList<>();
+    public static ArrayList<String> getAllReleaseVersions(String user, String repo) {
+        ArrayList<String> versions = new ArrayList<>();
         try {
             URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases").toURL();
 

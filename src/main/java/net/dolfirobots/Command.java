@@ -20,81 +20,102 @@ public class Command implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull org.bukkit.command.Command command, @NotNull String s, @NotNull String[] strings) {
         if (strings.length == 0) {
-            sendPlayerMessage("-------------------------------------------------", commandSender);
-            sendPlayerMessage("      §eOnlyProxy §7Plugin by §bDolfirobots      ", commandSender);
-            sendPlayerMessage("        Loaded version: " + Main.getInstance().getDescription().getVersion(), commandSender);
-            sendPlayerMessage("                 Download it here:               ", commandSender);
-            sendPlayerMessage("     https://github.com/Dolfirobots/OnlyProxy    ", commandSender);
-            sendPlayerMessage("-------------------------------------------------", commandSender);
+            sendPlayerMessage("-----------------------------------------", commandSender);
+            sendPlayerMessage("§e" + Main.centerMessage("OnlyProxy §7Plugin by §bDolfirobots", 41), commandSender);
+            sendPlayerMessage(Main.centerMessage("Loaded version: §e" + Main.getInstance().getDescription().getVersion(), 41), commandSender);
+            sendPlayerMessage(Main.centerMessage("             Download it here:           ", 41), commandSender);
+            sendPlayerMessage(Main.centerMessage("https://github.com/Dolfirobots/OnlyProxy", 41), commandSender);
+            sendPlayerMessage("-----------------------------------------", commandSender);
         } else
         if (strings.length == 1) {
             if (strings[0].equalsIgnoreCase("reload")) {
                 if (!commandSender.hasPermission("onlyproxy.commands")) {
-                    sendPlayerMessage("-------------------------------------------------", commandSender);
-                    sendPlayerMessage("§cYou don't have the Permission for this command!", commandSender);
-                    sendPlayerMessage("-------------------------------------------------", commandSender);
+                    sendPlayerMessage("-----------------------------------------", commandSender);
+                    sendPlayerMessage("§c" + Main.centerMessage("You don't have the Permission", 41), commandSender);
+                    sendPlayerMessage("§c" + Main.centerMessage("for this command!", 41), commandSender);
+                    sendPlayerMessage("-----------------------------------------", commandSender);
                     return true;
                 }
-                sendPlayerMessage("-------------------------------------------------", commandSender);
-                sendPlayerMessage("         §eReloading Plugin OnlyProxy...         ", commandSender);
+                sendPlayerMessage("-----------------------------------------", commandSender);
+                sendPlayerMessage("§e" + Main.centerMessage("Reloading Plugin OnlyProxy...", 41), commandSender);
                 Config.reload();
-                sendPlayerMessage("                    §aReloaded!                  ", commandSender);
-                sendPlayerMessage("-------------------------------------------------", commandSender);
+                sendPlayerMessage("§a" + Main.centerMessage("Reloaded!", 41), commandSender);
+                sendPlayerMessage("-----------------------------------------", commandSender);
             } else
             if (strings[0].equalsIgnoreCase("version")) {
                 if (!commandSender.hasPermission("onlyproxy.commands")) {
-                    sendPlayerMessage("-------------------------------------------------", commandSender);
-                    sendPlayerMessage("§cYou don't have the Permission for this command!", commandSender);
-                    sendPlayerMessage("-------------------------------------------------", commandSender);
+                    sendPlayerMessage("-----------------------------------------", commandSender);
+                    sendPlayerMessage("§c" + Main.centerMessage("You don't have the Permission", 41), commandSender);
+                    sendPlayerMessage("§c" + Main.centerMessage("for this command!", 41), commandSender);
+                    sendPlayerMessage("-----------------------------------------", commandSender);
                     return true;
                 }
-                sendPlayerMessage("-------------------------------------------------", commandSender);
-                sendPlayerMessage("            §eFetching last version...           ", commandSender);
+
+                sendPlayerMessage("-----------------------------------------", commandSender);
+                sendPlayerMessage("§e" + Main.centerMessage("Fetching last version...", 41), commandSender);
 
                 String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
 
                 if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
-                    sendPlayerMessage("     Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, commandSender);
-                    sendPlayerMessage("         §aOnlyProxy is up to date! (:          ", commandSender);
+                    sendPlayerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, commandSender);
+                    sendPlayerMessage("§a" + Main.centerMessage("OnlyProxy is up to date! (:", 41), commandSender);
 
                 } else if (!lastedVersion.equalsIgnoreCase("unknown")) {
-                    sendPlayerMessage("     Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastedVersion, commandSender);
-                    sendPlayerMessage("         §cOnlyProxy is not up to date! ):       ", commandSender);
-                    sendPlayerMessage("Please download it HERE: https://github.com/Dolfirobots/OnlyProxy/releases/" + lastedVersion, commandSender);
+                    sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastedVersion, 41), commandSender);
+                    sendPlayerMessage("§c" + Main.centerMessage("OnlyProxy is not up to date! ):", 41), commandSender);
+                    ArrayList<String> versions = GitHub.getAllReleaseVersions("Dolfirobots", "OnlyProxy");
+
+                    ArrayList<Integer> removeVersionIndex = new ArrayList<>();
+                    int currentIndex = 0;
+                    for (String version : versions) {
+                        currentIndex++;
+                        removeVersionIndex.add(currentIndex);
+                        if (version.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
+                            break;
+                        }
+                    }
+                    for (int index : removeVersionIndex) {
+                        versions.remove(index);
+                    }
+                    sendPlayerMessage(Main.centerMessage("You are §e" + versions.size() + "§7 versions behind!", 41), commandSender);
+                    sendPlayerMessage(Main.centerMessage("Please download it here:", 41), commandSender);
+                    sendPlayerMessage(Main.centerMessage("https://github.com/Dolfirobots/OnlyProxy/", 41), commandSender);
                 } else {
-                    sendPlayerMessage("         Your version: " + Main.getInstance().getDescription().getVersion(), commandSender);
-                    sendPlayerMessage("      §eWe couldn't check the lasted version!    ", commandSender);
-                    sendPlayerMessage("Please check the internet connection from you Server.", commandSender);
+                    sendPlayerMessage(Main.centerMessage("Your version: " + Main.getInstance().getDescription().getVersion(), 41), commandSender);
+                    sendPlayerMessage(Main.centerMessage("§eWe couldn't check the lasted version!", 41), commandSender);
+                    sendPlayerMessage(Main.centerMessage("Please check the internet", 41), commandSender);
+                    sendPlayerMessage(Main.centerMessage("connection from your Server.", 41), commandSender);
                 }
-                sendPlayerMessage("-------------------------------------------------", commandSender);
+                sendPlayerMessage("-----------------------------------------", commandSender);
             } else {
-                sendPlayerMessage("-------------------------------------------------", commandSender);
+                sendPlayerMessage("-----------------------------------------", commandSender);
                 if (commandSender.hasPermission("onlyproxy.commands")) {
-                    sendPlayerMessage("  §cUsage: §e/" + s + " [reload/version]", commandSender);
+                    sendPlayerMessage(Main.centerMessage("§cUsage: §e/" + s + " [reload/version]", 41), commandSender);
                 } else {
-                    sendPlayerMessage("         §cUsage: §e/" + s, commandSender);
+                    sendPlayerMessage(Main.centerMessage("§cUsage: §e/" + s, 41), commandSender);
                 }
-                sendPlayerMessage("-------------------------------------------------", commandSender);
+                sendPlayerMessage("-----------------------------------------", commandSender);
             }
         } else {
-            sendPlayerMessage("-------------------------------------------------", commandSender);
+            sendPlayerMessage("-----------------------------------------", commandSender);
             if (commandSender.hasPermission("onlyproxy.commands")) {
-                sendPlayerMessage("  §cUsage: §e/" + s + " [reload/version]", commandSender);
+                sendPlayerMessage(Main.centerMessage("§cUsage: §e/" + s + " [reload/version]", 41), commandSender);
             } else {
-                sendPlayerMessage("         §cUsage: §e/" + s, commandSender);
+                sendPlayerMessage(Main.centerMessage("§cUsage: §e/" + s, 41), commandSender);
             }
-            sendPlayerMessage("-------------------------------------------------", commandSender);
+            sendPlayerMessage("-----------------------------------------", commandSender);
         }
         return true;
     }
-
     @Nullable
     @Override
     public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull org.bukkit.command.Command command, @NotNull String s, @NotNull String[] strings) {
         List<String> list = new ArrayList<>();
-        if (strings.length == 1) {
-            list.add("reload");
-            list.add("version");
+        if (commandSender.hasPermission("onlyproxy.commands")) {
+            if (strings.length == 1) {
+                list.add("reload");
+                list.add("version");
+            }
         }
         return list;
     }
