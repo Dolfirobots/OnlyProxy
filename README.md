@@ -17,6 +17,7 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 - ✅ Schutz vor **Hackern** (WICHTIG: Nur vor Hackern die versuchen auf den Unter-Server zu joinen)
 - ✅ **Log-System** → Alle Joins werden protokolliert
 - ✅ Leicht zu konfigurieren
+- ! Ports forwarding kommt bald!
 
 ---
 
@@ -51,12 +52,12 @@ proxyIPs:
   - "0.0.0.0"
 
 # The Prefix of The Plugin
-prefix: "&7&l[&e&lOnlyProxy&7&l] "
+prefix: "&7[&eOnlyProxy&7] "
 
 # The kick message
 # You can use the Proxy IPs above like this: %proxy_1% -> 127.0.0.1
 # When you only have 2 Proxy IPs set: %proxy_3% -> %proxy_3%
-# You can access the prefix like that: %prefix% -> &7&l[&e&lOnlyProxy&7&l]
+# You can access the prefix like that: %prefix% -> &7[&eOnlyProxy&7]
 kickMessage:
   - "§r"
   - "%prefix%"
