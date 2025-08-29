@@ -17,7 +17,7 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 - ✅ Schutz vor **Hackern** (WICHTIG: Nur vor Hackern die versuchen auf den Unter-Server zu joinen)
 - ✅ **Log-System** → Alle Joins werden protokolliert
 - ✅ Leicht zu konfigurieren
-- ! Ports forwarding kommt bald!
+- ❌ COMING SOON: Ports forwarding
 
 ---
 
