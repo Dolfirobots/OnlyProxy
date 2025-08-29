@@ -126,8 +126,7 @@ public final class Main extends JavaPlugin implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerLoginEvent(PlayerLoginEvent event) {
         Player player = event.getPlayer();
-        String joinedProxyAddress = event.getRealAddress().getHostAddress();
-        String joinedProxyHost = event.getRealAddress().getHostName();
+        
         boolean passed = false;
         for (String proxyIP : Config.getList("proxyIPs")) {
             if (proxyIP.contains(":")) {
