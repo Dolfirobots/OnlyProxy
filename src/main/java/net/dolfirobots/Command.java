@@ -39,6 +39,17 @@ public class Command implements CommandExecutor, TabCompleter {
                 sendPlayerMessage("-----------------------------------------", commandSender);
                 sendPlayerMessage("§e" + Main.centerMessage("Reloading Plugin OnlyProxy...", 41), commandSender);
                 Config.reload();
+                for (String proxyIP : Config.getList("proxyIPs")) {
+                    if (proxyIP.contains(":")) {
+                        try {
+                            Integer.parseInt(proxyIP.split(":")[1]);
+                        } catch (NumberFormatException e) {
+                            sendPlayerMessage("§c" + Main.centerMessage("There was an parsing error!", 41), commandSender);
+                            sendPlayerMessage("§c" + Main.centerMessage("Please check the console!", 41), commandSender);
+                            Main.sendMessage("§cInvalid port formation in your config.yml by IP: " + proxyIP);
+                        }
+                    }
+                }
                 sendPlayerMessage("§a" + Main.centerMessage("Reloaded!", 41), commandSender);
                 sendPlayerMessage("-----------------------------------------", commandSender);
             } else
