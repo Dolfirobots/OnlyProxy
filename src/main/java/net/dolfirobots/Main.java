@@ -17,7 +17,6 @@ import static org.bukkit.Bukkit.getConsoleSender;
 public final class Main extends JavaPlugin implements Listener {
 
     public static File logFolder = new File("plugins/OnlyProxy", "logs");
-
     private static Main main;
 
     public static void sendMessage(String message) {
