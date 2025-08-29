@@ -50,6 +50,8 @@ Dort kannst du deine Proxy-IP(s) eintragen:
 proxyIPs:
   - "127.0.0.1"
   - "0.0.0.0"
+  - "play.yourserver.net"
+  - "12.123.12.12:25468" # WARNING: Ports forwarding is not recommended because it can be manipulated via client!
 
 # The Prefix of The Plugin
 prefix: "&7[&eOnlyProxy&7] "
@@ -63,8 +65,10 @@ kickMessage:
   - "%prefix%"
   - "§r"
   - "§r"
-  - "§cYou must you this Server over %proxy_1% or %proxy_2%!"
-  - "§7Need help? Join our Discord: discord.gg/YOUR_DISCORD_INVITE" # Change that here
+  - "§cYou must join this Server over %proxy_1% or %proxy_2%!"
+  - "§7You can change that message in" # Change that here
+  - "§7plugins/OnlyProxy/config.yml"
+  - "§r"
   - "§r"
 
 log:
