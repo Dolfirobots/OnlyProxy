@@ -110,7 +110,7 @@ public final class Main extends JavaPlugin implements Listener {
             if (!lastLine.replace(" ", "").isEmpty()) {
                 writer.newLine();
             }
-            writer.write("[" + timestamp + "] [" + (passed ? "PASSED" : "BLOCKED") + "] " + (Config.getBoolean("console.logPlayerName") ? "Player: " + player.getName() + " | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: " + event.getAddress().getHostAddress() + " | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: " + event.getRealAddress().getHostAddress() : ""));
+            writer.write("[" + timestamp + "] [" + (passed ? "PASSED" : "BLOCKED") + "] " + (Config.getBoolean("log.logPlayerName") ? "Player: " + player.getName() + " | " : "") + (Config.getBoolean("log.logIPs") ? "Player IP: " + event.getAddress().getHostAddress() + " | " : "") + (Config.getBoolean("log.logProxyIPs") ? "Proxy IP: " + event.getRealAddress().getHostAddress() : ""));
         } catch (Exception e) {
             sendMessage("§cError by writing to the log file: " + e.getMessage());
         }
