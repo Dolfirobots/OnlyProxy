@@ -153,7 +153,7 @@ public final class Main extends JavaPlugin implements Listener {
         createLog(event, passed);
         if (!Config.getString("console.logging").equalsIgnoreCase("OFF")) {
             if (Config.getString("console.logging").equalsIgnoreCase("OTHER") && !passed) return;
-            sendMessage("§7[" + (passed ? "§aPASSED" : "§cBLOCKED") + "§7] " + (Config.getBoolean("console.logPlayerName") ? "Player: §e" + player.getName() + "§7 | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: §e" + event.getAddress().getHostAddress() + "§7 | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: §e" + joinedProxyAddress : ""));
+            sendMessage("§7[" + (passed ? "§aPASSED" : "§cBLOCKED") + "§7] " + (Config.getBoolean("console.logPlayerName") ? "Player: §e" + player.getName() + "§7 | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: §e" + event.getAddress().getHostAddress() + "§7 | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: §e" + event.getRealAddress().getHostAddress() : ""));
         }
     }
     public static Main getInstance() {
