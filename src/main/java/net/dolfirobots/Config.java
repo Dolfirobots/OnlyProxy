@@ -26,7 +26,7 @@ public class Config {
     public static Boolean getBoolean(String path) {
         return getConfig().getBoolean(path);
     }
-    public static List getList(String path) {
-        return getConfig().getList(path);
+    public static List<String> getList(String path) {
+        return getConfig().getStringList(path);
     }
 }
