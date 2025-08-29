@@ -13,10 +13,7 @@ public class Config {
         cfg = Main.getInstance().getConfig();
     }
     public static Configuration getConfig() {
-        if (cfg == null) {
-            cfg = Main.getInstance().getConfig();
-        }
-        return cfg;
+        return Main.getInstance().getConfig();
     }
     public static String prefix() {
         String prefix = getString("prefix");
