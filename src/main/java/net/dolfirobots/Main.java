@@ -11,7 +11,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import static org.bukkit.Bukkit.getConsoleSender;
 
