@@ -29,6 +29,7 @@ kickMessage:
   - "§7You can change that message in" # Change that here
   - "§7plugins/OnlyProxy/config.yml"
   - "§r"
+  - "§r"
 
 log:
   # Should log joins?
