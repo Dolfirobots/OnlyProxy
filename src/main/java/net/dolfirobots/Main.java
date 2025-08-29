@@ -129,10 +129,28 @@ public final class Main extends JavaPlugin implements Listener {
         String joinedProxyAddress = event.getRealAddress().getHostAddress();
         String joinedProxyHost = event.getRealAddress().getHostName();
         boolean passed = false;
-        if (Config.getList("proxyIPs").contains(joinedProxyHost) || Config.getList("proxyIPs").contains(joinedProxyAddress)) {
-            passed = true;
-        } else {
-            String kickMsg = ChatColor.translateAlternateColorCodes('&', String.join("\n", (List<String>) Config.getList("kickMessage"))).replace("%prefix%", ChatColor.translateAlternateColorCodes('&', Config.prefix()));
+        for (String proxyIP : Config.getList("proxyIPs")) {
+            if (proxyIP.contains(":")) {
+                String[] partedIP = proxyIP.split(":");
+                int port;
+                try {
+                    port = Integer.parseInt(partedIP[1]);
+                } catch (NumberFormatException e) {
+                    sendMessage("§cInvalid port formation in your config.yml by IP: " + proxyIP);
+                    continue;
+                }
+                int clientPort = Integer.parseInt(event.getHostname().split(":")[1]); // WARNING: That "port forwarding" detects not perfect the port because it only checks the port that was sent by the client wich can be manipulated!
+                if ((partedIP[0].equalsIgnoreCase(event.getRealAddress().getHostAddress()) || partedIP[0].equalsIgnoreCase(event.getRealAddress().getHostName())) && clientPort == port) {
+                    passed = true;
+                    break;
+                }
+            } else if (proxyIP.equalsIgnoreCase(event.getRealAddress().getHostAddress()) || proxyIP.equalsIgnoreCase(event.getRealAddress().getHostName())) {
+                passed = true;
+                break;
+            }
+        }
+        if (!passed) {
+            String kickMsg = ChatColor.translateAlternateColorCodes('&', String.join("\n", Config.getList("kickMessage"))).replace("%prefix%", ChatColor.translateAlternateColorCodes('&', Config.prefix()));
             int counter = 0;
             for (String address : (List<String>) Config.getList("proxyIPs")) {
                 counter++;
