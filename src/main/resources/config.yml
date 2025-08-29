@@ -26,7 +26,8 @@ kickMessage:
   - "§r"
   - "§r"
   - "§cYou must you this Server over %proxy_1% or %proxy_2%!"
-  - "§7Need help? Join our Discord: discord.gg/YOUR_DISCORD_INVITE" # Change that here
+  - "§7You can change that message in" # Change that here
+  - "§7plugins/OnlyProxy/config.yml"
   - "§r"
 
 log:
