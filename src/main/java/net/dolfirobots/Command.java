@@ -1,5 +1,6 @@
 package net.dolfirobots;
 
+import jdk.jshell.spi.SPIResolutionException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
@@ -68,7 +69,7 @@ public class Command implements CommandExecutor, TabCompleter {
                 String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
 
                 if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
-                    sendPlayerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, commandSender);
+                    sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, 41), commandSender);
                     sendPlayerMessage("§a" + Main.centerMessage("OnlyProxy is up to date! (:", 41), commandSender);
 
                 } else if (!lastedVersion.equalsIgnoreCase("unknown")) {
@@ -78,16 +79,19 @@ public class Command implements CommandExecutor, TabCompleter {
 
                     ArrayList<Integer> removeVersionIndex = new ArrayList<>();
                     int currentIndex = 0;
+
                     for (String version : versions) {
-                        currentIndex++;
-                        removeVersionIndex.add(currentIndex);
                         if (version.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
                             break;
                         }
+                        removeVersionIndex.add(currentIndex);
+                        currentIndex++;
                     }
-                    for (int index : removeVersionIndex) {
-                        versions.remove(index);
+                    for (int i = removeVersionIndex.size() - 1; i >= 0; i--) {
+                        versions.remove((int) removeVersionIndex.get(i));
                     }
+
+
                     sendPlayerMessage(Main.centerMessage("You are §e" + versions.size() + "§7 versions behind!", 41), commandSender);
                     sendPlayerMessage(Main.centerMessage("Please download it here:", 41), commandSender);
                     sendPlayerMessage(Main.centerMessage("https://github.com/Dolfirobots/OnlyProxy/", 41), commandSender);

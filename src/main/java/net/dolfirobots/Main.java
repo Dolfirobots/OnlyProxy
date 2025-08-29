@@ -77,7 +77,7 @@ public final class Main extends JavaPlugin implements Listener {
     }
 
     public static void createLog(PlayerLoginEvent event, Boolean passed) {
-        if (Config.getString("log.logging").equalsIgnoreCase("OFF") || (Config.getString("log.logging").equalsIgnoreCase("OTHER") && !passed)) {
+        if (Config.getString("log.logging").equalsIgnoreCase("OFF") || (Config.getString("log.logging").equalsIgnoreCase("OTHER") && passed)) {
             return;
         }
         Player player = event.getPlayer();
@@ -119,7 +119,7 @@ public final class Main extends JavaPlugin implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerLoginEvent(PlayerLoginEvent event) {
         Player player = event.getPlayer();
-        
+
         boolean passed = false;
         for (String proxyIP : Config.getList("proxyIPs")) {
             if (proxyIP.contains(":")) {

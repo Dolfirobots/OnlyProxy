@@ -5,12 +5,9 @@ import org.bukkit.configuration.Configuration;
 import java.util.List;
 
 public class Config {
-    private static Configuration cfg = null;
-
     public static void reload() {
         Main.getInstance().saveDefaultConfig();
         Main.getInstance().reloadConfig();
-        cfg = Main.getInstance().getConfig();
     }
     public static Configuration getConfig() {
         return Main.getInstance().getConfig();
