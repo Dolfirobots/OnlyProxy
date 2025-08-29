@@ -144,7 +144,7 @@ public final class Main extends JavaPlugin implements Listener {
         if (!passed) {
             String kickMsg = ChatColor.translateAlternateColorCodes('&', String.join("\n", Config.getList("kickMessage"))).replace("%prefix%", ChatColor.translateAlternateColorCodes('&', Config.prefix()));
             int counter = 0;
-            for (String address : (List<String>) Config.getList("proxyIPs")) {
+            for (String address : Config.getList("proxyIPs")) {
                 counter++;
                 kickMsg = kickMsg.replace("%proxy_" + counter + "%", address);
             }
