@@ -22,12 +22,8 @@ public final class Main extends JavaPlugin implements Listener {
         getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Config.prefix()) + message);
     }
     public static String centerMessage(String message, int length) {
-        int msgLength = ChatColor.stripColor(message).length();
-        int spaces = (length - msgLength) / 2;
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < spaces; i++) sb.append(" ");
-        sb.append(message);
-        return sb.toString();
+        int spaces = Math.max(0, (length - ChatColor.stripColor(message).length()) / 2);
+        return " ".repeat(spaces) + message;
     }
 
     @Override
