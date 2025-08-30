@@ -2,8 +2,8 @@
 
 > [!NOTE]
 > Sprachen:  
-> [Deutsch](./README_de.md)  
-> [English](./README.md)
+> __**[Deutsch](./README_de.md)**__  
+> **[English](./README.md)**
 
 [![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.8-orange)](https://www.spigotmc.org/)
 [![License](https://img.shields.io/github/license/Dolfirobots/OnlyProxy)](./LICENSE)
