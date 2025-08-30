@@ -1,8 +1,8 @@
 # 🌐 OnlyProxy
 
 > [!NOTE]
-> Sprachen:  
-> **[Deutsch](./README_de.md)** 
+> Languages:  
+> **[Deutsch](./README_de.md)**  
 > _**[English](./README.md)**_
 
 [![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.8-orange)](https://www.spigotmc.org/)
