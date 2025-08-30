@@ -1,7 +1,7 @@
 # 🌐 OnlyProxy
 
 > [!NOTE]
-> Sprachen:
+> Sprachen:  
 > [Deutsch](./README_de.md)  
 > [English](./README.md)
 
