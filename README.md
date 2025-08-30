@@ -13,11 +13,11 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 
 ## ✨ Features
 - ✅ Unterstützt **Minecraft 1.20 – 1.21.8**
-- ✅ Blockiert direkte Verbindungen ohne Proxy
+- ✅ Blockiert direkte Verbindungen ohne Proxy und von andern Proxies die nicht von dir kommen
 - ✅ Schutz vor **Hackern** (WICHTIG: Nur vor Hackern die versuchen auf den Unter-Server zu joinen)
 - ✅ **Log-System** → Alle Joins werden protokolliert
 - ✅ Leicht zu konfigurieren
-- ❌ COMING SOON: Ports forwarding
+- ✅ Ports forwarding
 
 ---
 
