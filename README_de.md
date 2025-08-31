@@ -27,7 +27,7 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 ---
 
 ## 📥 Installation
-1. Lade dir die neueste Version von [Releases](https://github.com/Dolfirobots/OnlyProxy/releases) herunter.
+1. Lade dir die neueste Version von [GitHub](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy") oder [Spigot](https://www.spigotmc.org/resources/onlyproxy.128485/ "OnlyProxy") herunter.
 2. Lege die `.jar`-Datei in den Ordner:
 ```
 
