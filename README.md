@@ -27,7 +27,7 @@ Direct connections to unsecured backend servers (e.g., by hackers) are blocked. 
 ---
 
 ## 📥 Installation
-1. Download the latest version from [GitHub](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy") or [Spigot](https://www.spigotmc.org/resources/onlyproxy.128485/ "OnlyProxy").
+1. Download the latest version from [GitHub](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy"), [Spigot](https://www.spigotmc.org/resources/onlyproxy.128485/ "OnlyProxy") or [Modrinth](https://modrinth.com/plugin/onlyproxy/ "OnlyProxy").
 2. Place the `.jar` file into the folder:
 
 ```
