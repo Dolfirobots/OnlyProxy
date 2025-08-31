@@ -1,14 +1,14 @@
 ---
 name: Rating
 about: 'Rate this project (Plugin) from 1-5 stars '
-title: "[RATING]"
+title: "[RATING] (little description here)"
 labels: ''
 assignees: ''
 
 ---
 
-**Descripe your Rating**
+**Description**
 For example: I like this plugin because its so clean!
 
-**Make a Rating from 1 to 5 Stars**
-You can say: I rate this with 4.5 stars because... (Here your description)
+**Stars**
+You can say: I rate this with 5 stars...
