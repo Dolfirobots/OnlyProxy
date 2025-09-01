@@ -27,7 +27,7 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 ---
 
 ## 📥 Installation
-1. Lade dir die neueste Version von [GitHub](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy") oder [Spigot](https://www.spigotmc.org/resources/onlyproxy.128485/ "OnlyProxy") herunter.
+1. Lade dir die neueste Version von [GitHub](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy"), [Spigot](https://www.spigotmc.org/resources/onlyproxy.128485/ "OnlyProxy") oder [Modrinth](https://modrinth.com/plugin/OnlyProxy "OnlyProxy") herunter.
 2. Lege die `.jar`-Datei in den Ordner:
 ```
 
@@ -151,4 +151,8 @@ Dieses Projekt ist unter der [MIT License](./LICENSE) lizenziert.
 
 ---
 
-💡 **Tipp:** Nutze OnlyProxy zusammen mit einer **Firewall und [Velocity](https://papermc.io/downloads/velocity)**, um den maximalen Schutz für deinen Server zu erreichen.
+💡 **Tipp:** Nutze OnlyProxy zusammen mit einer **Firewall und [Velocity](https://papermc.io/downloads/velocity)**, um mehr Schutz für deinen Server zu erreichen.
+
+---
+
+https://bstats.org/signatures/bukkit/OnlyProxy.svg
