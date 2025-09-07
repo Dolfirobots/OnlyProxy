@@ -66,7 +66,7 @@ public class Command implements CommandExecutor, TabCompleter {
                 sendPlayerMessage("-----------------------------------------", commandSender);
                 sendPlayerMessage("§e" + Main.centerMessage("Fetching last version...", 41), commandSender);
 
-                String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
+                String lastedVersion = GitHub.getLastedVersion("Dolfirobots", "OnlyProxy");
 
                 if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
                     sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, 41), commandSender);
@@ -75,7 +75,7 @@ public class Command implements CommandExecutor, TabCompleter {
                 } else if (!lastedVersion.equalsIgnoreCase("unknown")) {
                     sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastedVersion, 41), commandSender);
                     sendPlayerMessage("§c" + Main.centerMessage("OnlyProxy is not up to date! ):", 41), commandSender);
-                    ArrayList<String> versions = GitHub.getAllReleaseVersions("Dolfirobots", "OnlyProxy");
+                    ArrayList<String> versions = GitHub.getAllVersions("Dolfirobots", "OnlyProxy");
 
                     ArrayList<Integer> removeVersionIndex = new ArrayList<>();
                     int currentIndex = 0;

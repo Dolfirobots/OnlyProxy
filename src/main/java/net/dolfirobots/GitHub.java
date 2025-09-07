@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GitHub {
-    public static String getLastedReleaseVersion(String user, String repo) {
+    public static String getLastedVersion(String user, String repo) {
         try {
             URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases/latest").toURL();
 
@@ -33,7 +33,7 @@ public class GitHub {
             return "unknown";
         }
     }
-    public static ArrayList<String> getAllReleaseVersions(String user, String repo) {
+    public static ArrayList<String> getAllVersions(String user, String repo) {
         ArrayList<String> versions = new ArrayList<>();
         try {
             URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases").toURL();

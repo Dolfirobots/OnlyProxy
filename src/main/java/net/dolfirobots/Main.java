@@ -38,8 +38,7 @@ public final class Main extends JavaPlugin implements Listener {
         } else {
             sendMessage("§a" + centerMessage("Version:§c not compatible", 38) + "§r");
         }
-        String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
-        if (!lastedVersion.equalsIgnoreCase(getDescription().getVersion())) {
+        if (!GitHub.getLastedVersion("Dolfirobots", "OnlyProxy").equalsIgnoreCase(getDescription().getVersion())) {
             sendMessage("§c" + centerMessage("There is a newer version outside!", 38) + "§r");
             sendMessage("§c" + centerMessage("Please check with /onlyproxy version", 38) + "§r");
         }
@@ -69,8 +68,7 @@ public final class Main extends JavaPlugin implements Listener {
         } else {
             sendMessage("§a" + centerMessage("Version:§c not compatible", 38) + "§r");
         }
-        String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
-        if (!lastedVersion.equalsIgnoreCase(getDescription().getVersion())) {
+        if (!GitHub.getLastedVersion("Dolfirobots", "OnlyProxy").equalsIgnoreCase(getDescription().getVersion())) {
             sendMessage("§c" + centerMessage("There is a newer version outside!", 38) + "§r");
             sendMessage("§c" + centerMessage("Please check with /onlyproxy version", 38) + "§r");
         }
