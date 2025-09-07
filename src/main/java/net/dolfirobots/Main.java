@@ -29,6 +29,7 @@ public final class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         main = this;
         Metrics metrics = new Metrics(this, 27115);
+
         sendMessage("§a--------------------------------------§r");
         sendMessage("§a" + centerMessage("Only Proxy Plugin was enabled!", 38) + "§r");
         sendMessage("§a" + centerMessage("Paper", 38) + "§r");
