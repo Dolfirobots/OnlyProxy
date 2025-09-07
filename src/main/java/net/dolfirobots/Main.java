@@ -40,7 +40,7 @@ public final class Main extends JavaPlugin implements Listener {
         }
         String lastedVersion = GitHub.getLastedReleaseVersion("Dolfirobots", "OnlyProxy");
         if (!lastedVersion.equalsIgnoreCase(getDescription().getVersion())) {
-            sendMessage("§c" + centerMessage("There is a new version outside!", 38) + "§r");
+            sendMessage("§c" + centerMessage("There is a newer version outside!", 38) + "§r");
             sendMessage("§c" + centerMessage("Please check with /onlyproxy version", 38) + "§r");
         }
         sendMessage("§a--------------------------------------§r");
