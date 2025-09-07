@@ -2,7 +2,7 @@
 name: Rating
 about: 'Rate this project (Plugin) from 1-5 stars '
 title: "[RATING] (little description here)"
-labels: ''
+labels: 'rating'
 assignees: ''
 
 ---
