@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class GitHub {
     public static String getLastedVersion(String user, String repo) {
         try {
-            URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases/latest").toURL();
-
+            URL url = new URL("https://api.github.com/repos/" + user + "/" + repo + "/releases/latest");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/vnd.github.v3+json");
@@ -36,7 +35,7 @@ public class GitHub {
     public static ArrayList<String> getAllVersions(String user, String repo) {
         ArrayList<String> versions = new ArrayList<>();
         try {
-            URL url = new URI("https://api.github.com/repos/" + user + "/" + repo + "/releases").toURL();
+            URL url = new URL("https://api.github.com/repos/" + user + "/" + repo + "/releases");
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
