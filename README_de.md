@@ -11,7 +11,7 @@
 [![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/dxZTGpPbkd "Discord")
 
 **OnlyProxy** ist ein einfaches Minecraft-Plugin für **Spigot/Paper (1.20 – 1.21.8)**.  
-Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über __deinen __ Proxy joinen.  
+Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über __deinen__ Proxy joinen.  
 
 ---
 
