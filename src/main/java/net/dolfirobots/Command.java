@@ -24,7 +24,7 @@ public class Command implements CommandExecutor, TabCompleter {
             sendPlayerMessage("-----------------------------------------", commandSender);
             sendPlayerMessage("§e" + Main.centerMessage("OnlyProxy §7Plugin by §bDolfirobots", 41), commandSender);
             sendPlayerMessage(Main.centerMessage("Loaded version: §e" + Main.getInstance().getDescription().getVersion(), 41), commandSender);
-            sendPlayerMessage(Main.centerMessage("             Download it here:           ", 41), commandSender);
+            sendPlayerMessage(Main.centerMessage("Download it here:", 41), commandSender);
             sendPlayerMessage(Main.centerMessage("https://github.com/Dolfirobots/OnlyProxy", 41), commandSender);
             sendPlayerMessage("-----------------------------------------", commandSender);
         } else
