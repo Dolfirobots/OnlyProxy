@@ -10,6 +10,11 @@
 [![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
 [![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/dxZTGpPbkd "Discord")
 
+> [!WARNING]
+> This Plugin is not good and has a cheap  
+> filter system. Please do not assume that this  
+> plugin can hold up hackers!  
+
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.8)**.  
 It protects your server by allowing only players who connect through ___your___ proxy.  
 
