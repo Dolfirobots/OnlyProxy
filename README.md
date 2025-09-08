@@ -13,7 +13,7 @@
 > [!WARNING]
 > This Plugin is not good and has a cheap  
 > filter system. Please do not assume that this  
-> plugin can hold up hackers!  
+> plugin can block hackers!  
 
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.8)**.  
 It protects your server by allowing only players who connect through ___your___ proxy.  
