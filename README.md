@@ -18,7 +18,6 @@ It protects your server by allowing only players who connect through ___your___ 
 ## ✨ Features
 - ✅ Supports **Minecraft 1.21 – 1.21.8**
 - ✅ Blocks direct connections without a proxy and from proxies that are not yours
-- ✅ Protection against **hackers** (IMPORTANT: Only those trying to access backend servers directly)
 - ✅ **Log system** → All joins are logged
 - ✅ Easy to configure
 - ✅ Supports port forwarding
