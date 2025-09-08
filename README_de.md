@@ -16,9 +16,8 @@ Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über __
 ---
 
 ## ✨ Features
-- ✅ Unterstützt **Minecraft 1.21 – 1.21.8**
+- ✅ Unterstützt **Minecraft 1.20 – 1.21.8**
 - ✅ Blockiert direkte Verbindungen ohne Proxy und von andern Proxies die nicht von dir kommen
-- ✅ Schutz vor **Hackern** (WICHTIG: Nur vor Hackern die versuchen auf den Unter-Server zu joinen)
 - ✅ **Log-System** → Alle Joins werden protokolliert
 - ✅ Leicht zu konfigurieren
 - ✅ Ports forwarding
