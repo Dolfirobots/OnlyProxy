@@ -5,8 +5,7 @@
 > **[Deutsch](./README_de.md)**  
 > _**[English](./README.md)**_
 
-[![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.8-orange)](https://www.spigotmc.org/)
-[![License](https://img.shields.io/github/license/Dolfirobots/OnlyProxy)](./LICENSE)
+[![GitHub Dowloads](https://github.com/Dolfirobots/OnlyProxy/releases "GitHub Releases")](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)
 [![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
 [![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/dxZTGpPbkd "Discord")
 
