@@ -12,7 +12,7 @@
 > Ein Only Proxy Plugin bedeutet,  
 > das es die IP abgleicht die von dem Proxy  
 > gesendet wurde.  
-> Aber ALLES was von dem Proxy oder dem Server  
+> Aber __ALLES__ was von dem Proxy oder dem Server  
 > gesendet wird, kann manipuliert werden!  
 > Deswegen werde ich in Zukunft keine
 > weiteren Updates mehr Hochladen!
