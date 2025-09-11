@@ -13,7 +13,7 @@
 > A Only Proxy Plugin means, that you  
 > check up the IP that was sended by the proxy  
 > and block or pass the connection.
-> But EVERYTHING that were send between your
+> But __EVERYTHING__ that were send between your
 > Server and the Proxy can be manipluated!
 > Thats why I no longer make updates for this Plugin!
 
