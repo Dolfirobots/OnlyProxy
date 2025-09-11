@@ -10,9 +10,12 @@
 [![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green)](https://discord.gg/dxZTGpPbkd "Discord")
 
 > [!WARNING]
-> This Plugin is not good and has a cheap  
-> filter system. Please do not assume that this  
-> plugin can block hackers!  
+> A Only Proxy Plugin means, that you  
+> check up the IP that was sended by the proxy  
+> and block or pass the connection.
+> But EVERYTHING that were send between your
+> Server and the Proxy can be manipluated!
+> Thats why I no longer make updates for this Plugin!
 
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.8)**.  
 It protects your server by allowing only players who connect through ___your___ proxy.  
