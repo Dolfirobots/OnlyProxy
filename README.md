@@ -2,8 +2,8 @@
 
 > [!NOTE]
 > Languages:  
-> **[🇩🇪 Deutsch](./README_de.md)**  
-> _**[🇬🇧 English](./README.md)**_
+> **[[🇩🇪] Deutsch](./README_de.md)**  
+> **[[🇬🇧] _English_](./README.md)**
 
 [![GitHub Dowloads](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)](https://github.com/Dolfirobots/OnlyProxy/releases)
 [![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy?color=Green)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
