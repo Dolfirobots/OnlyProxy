@@ -40,7 +40,7 @@ Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über __
 /plugins
 
 ````
-3. Starte deinen Server neu. (Oder mach `/rl confirm`, aber manche Plugins unterstützen das nicht und ab 1.21.x gibt es diese Funktion nicht mehr)
+3. Starte deinen Server neu.
 
 ---
 
