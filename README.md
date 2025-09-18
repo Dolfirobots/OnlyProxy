@@ -39,7 +39,7 @@ It protects your server by allowing only players who connect through ___your___ 
 /plugins
 ```
 
-3. Restart your server. (Or use `/rl confirm`, but note that some plugins don’t support this and it no longer exists in 1.21.x)
+3. Restart your server.
 
 ---
 
