@@ -2,24 +2,30 @@
 
 > [!NOTE]
 > Sprachen:  
-> _**[Deutsch](./README_de.md)**_  
-> **[English](./README.md)**
-
-[![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.8-orange)](https://www.spigotmc.org/)
-[![License](https://img.shields.io/github/license/Dolfirobots/OnlyProxy)](./LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
-[![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/dxZTGpPbkd "Discord")
+> _**[🇩🇪 Deutsch](./README_de.md)**_  
+> **[🇬🇧 English](./README.md)**
+  
+[![GitHub Dowloads](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)](https://github.com/Dolfirobots/OnlyProxy/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy?color=Green)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
+[![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/dxZTGpPbkd "Discord")
+  
+> [!WARNING]
+> Ein Only Proxy Plugin bedeutet,  
+> das es die IP abgleicht die von dem Proxy  
+> gesendet wurde.  
+> Aber __ALLES__ was von dem Proxy oder dem Server  
+> gesendet wird, kann manipuliert werden!  
+> Deswegen werde ich in Zukunft keine
+> weiteren Updates mehr Hochladen!
 
 **OnlyProxy** ist ein einfaches Minecraft-Plugin für **Spigot/Paper (1.20 – 1.21.8)**.  
-Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über deinen Proxy joinen.  
-Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) werden blockiert. 🚫
+Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über ___deinen___ Proxy joinen.  
 
 ---
 
 ## ✨ Features
-- ✅ Unterstützt **Minecraft 1.21 – 1.21.8**
+- ✅ Unterstützt **Minecraft 1.20 – 1.21.8**
 - ✅ Blockiert direkte Verbindungen ohne Proxy und von andern Proxies die nicht von dir kommen
-- ✅ Schutz vor **Hackern** (WICHTIG: Nur vor Hackern die versuchen auf den Unter-Server zu joinen)
 - ✅ **Log-System** → Alle Joins werden protokolliert
 - ✅ Leicht zu konfigurieren
 - ✅ Ports forwarding
@@ -34,7 +40,7 @@ Direkte Verbindungen auf die ungesicherten Unter-Servern (z. B. von Hackern) wer
 /plugins
 
 ````
-3. Starte deinen Server neu. (Oder mach `/rl confirm`, aber manche Plugins unterstützen das nicht und ab 1.21.x gibt es diese Funktion nicht mehr)
+3. Starte deinen Server neu.
 
 ---
 

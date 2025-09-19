@@ -2,24 +2,29 @@
 
 > [!NOTE]
 > Languages:  
-> **[Deutsch](./README_de.md)**  
-> _**[English](./README.md)**_
+> **[[🇩🇪] Deutsch](./README_de.md)**  
+> **[[🇬🇧] *English*](./README.md)**
 
-[![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.8-orange)](https://www.spigotmc.org/)
-[![License](https://img.shields.io/github/license/Dolfirobots/OnlyProxy)](./LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
-[![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=fff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/dxZTGpPbkd "Discord")
+[![GitHub Dowloads](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)](https://github.com/Dolfirobots/OnlyProxy/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy?color=Green)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
+[![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/dxZTGpPbkd "Discord")
+
+> [!WARNING]
+> A Only Proxy Plugin means, that you  
+> check up the IP that was sended by the proxy  
+> and block or pass the connection.  
+> But __EVERYTHING__ that were send between your  
+> Server and the Proxy can be manipluated!  
+> Thats why I no longer make updates for this Plugin!
 
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.8)**.  
-It protects your server by allowing only players who connect through your proxy.  
-Direct connections to unsecured backend servers (e.g., by hackers) are blocked. 🚫
+It protects your server by allowing only players who connect through ___your___ proxy.  
 
 ---
 
 ## ✨ Features
-- ✅ Supports **Minecraft 1.21 – 1.21.8**
+- ✅ Supports **Minecraft 1.20 – 1.21.8**
 - ✅ Blocks direct connections without a proxy and from proxies that are not yours
-- ✅ Protection against **hackers** (IMPORTANT: Only those trying to access backend servers directly)
 - ✅ **Log system** → All joins are logged
 - ✅ Easy to configure
 - ✅ Supports port forwarding
@@ -34,7 +39,7 @@ Direct connections to unsecured backend servers (e.g., by hackers) are blocked. 
 /plugins
 ```
 
-3. Restart your server. (Or use `/rl confirm`, but note that some plugins don’t support this and it no longer exists in 1.21.x)
+3. Restart your server.
 
 ---
 
