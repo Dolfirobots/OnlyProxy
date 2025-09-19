@@ -2,7 +2,6 @@ package net.dolfirobots;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,7 +35,6 @@ public class GitHub {
         ArrayList<String> versions = new ArrayList<>();
         try {
             URL url = new URL("https://api.github.com/repos/" + user + "/" + repo + "/releases");
-
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/vnd.github.v3+json");

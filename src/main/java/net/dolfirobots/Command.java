@@ -1,7 +1,5 @@
 package net.dolfirobots;
 
-import jdk.jshell.spi.SPIResolutionException;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -66,14 +64,14 @@ public class Command implements CommandExecutor, TabCompleter {
                 sendPlayerMessage("-----------------------------------------", commandSender);
                 sendPlayerMessage("§e" + Main.centerMessage("Fetching last version...", 41), commandSender);
 
-                String lastedVersion = GitHub.getLastedVersion("Dolfirobots", "OnlyProxy");
+                String lastetVersion = GitHub.getLastedVersion("Dolfirobots", "OnlyProxy");
 
-                if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
-                    sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, 41), commandSender);
+                if (lastetVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
+                    sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastetVersion, 41), commandSender);
                     sendPlayerMessage("§a" + Main.centerMessage("OnlyProxy is up to date! (:", 41), commandSender);
 
-                } else if (!lastedVersion.equalsIgnoreCase("unknown")) {
-                    sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastedVersion, 41), commandSender);
+                } else if (!lastetVersion.equalsIgnoreCase("unknown")) {
+                    sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastetVersion, 41), commandSender);
                     sendPlayerMessage("§c" + Main.centerMessage("OnlyProxy is not up to date! ):", 41), commandSender);
                     ArrayList<String> versions = GitHub.getAllVersions("Dolfirobots", "OnlyProxy");
 
@@ -90,7 +88,6 @@ public class Command implements CommandExecutor, TabCompleter {
                     for (int i = removeVersionIndex.size() - 1; i >= 0; i--) {
                         versions.remove((int) removeVersionIndex.get(i));
                     }
-
 
                     sendPlayerMessage(Main.centerMessage("You are §e" + versions.size() + "§7 versions behind!", 41), commandSender);
                     sendPlayerMessage(Main.centerMessage("Please download it here:", 41), commandSender);
