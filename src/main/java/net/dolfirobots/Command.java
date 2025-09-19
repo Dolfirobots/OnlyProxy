@@ -64,14 +64,14 @@ public class Command implements CommandExecutor, TabCompleter {
                 sendPlayerMessage("-----------------------------------------", commandSender);
                 sendPlayerMessage("§e" + Main.centerMessage("Fetching last version...", 41), commandSender);
 
-                String lastetVersion = GitHub.getLastedVersion("Dolfirobots", "OnlyProxy");
+                String lastedVersion = GitHub.getLastedVersion("Dolfirobots", "OnlyProxy");
 
-                if (lastetVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
-                    sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastetVersion, 41), commandSender);
+                if (lastedVersion.equalsIgnoreCase(Main.getInstance().getDescription().getVersion())) {
+                    sendPlayerMessage(Main.centerMessage("Your version: §a" + Main.getInstance().getDescription().getVersion() + "§7 == §a" + lastedVersion, 41), commandSender);
                     sendPlayerMessage("§a" + Main.centerMessage("OnlyProxy is up to date! (:", 41), commandSender);
 
-                } else if (!lastetVersion.equalsIgnoreCase("unknown")) {
-                    sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastetVersion, 41), commandSender);
+                } else if (!lastedVersion.equalsIgnoreCase("unknown")) {
+                    sendPlayerMessage(Main.centerMessage("Your version: §c" + Main.getInstance().getDescription().getVersion() + "§7 => §a" + lastedVersion, 41), commandSender);
                     sendPlayerMessage("§c" + Main.centerMessage("OnlyProxy is not up to date! ):", 41), commandSender);
                     ArrayList<String> versions = GitHub.getAllVersions("Dolfirobots", "OnlyProxy");
 
