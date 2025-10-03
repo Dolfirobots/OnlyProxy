@@ -61,7 +61,7 @@ proxyIPs:
   - "127.0.0.1"
   - "0.0.0.0"
   - "play.yourserver.net"
-  - "12.123.12.12:25468" # WARNING: Port forwarding is not recommended because it can be manipulated via client!
+  - "12.123.12.12:25468"
 
 # The Prefix of The Plugin
 prefix: "&7[&eOnlyProxy&7] "
