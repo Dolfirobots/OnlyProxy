@@ -160,8 +160,4 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
-💡 **Tip:** Use OnlyProxy together with a **firewall and [Velocity](https://papermc.io/downloads/velocity)** to ensure maximum protection for your server.
-
----
-
 [![](https://bstats.org/signatures/bukkit/OnlyProxy.svg)](https://bstats.org/plugin/bukkit/OnlyProxy)
