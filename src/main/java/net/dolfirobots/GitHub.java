@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GitHub {
+    // Not the best version checker, but it works :)
+    
     public static String getLastedVersion(String user, String repo) {
         try {
             URL url = new URL("https://api.github.com/repos/" + user + "/" + repo + "/releases/latest");
