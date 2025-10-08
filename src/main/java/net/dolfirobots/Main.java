@@ -19,17 +19,21 @@ public final class Main extends JavaPlugin implements Listener {
     public static File logFolder = new File("plugins/OnlyProxy", "logs");
     private static Main main;
     public static void sendMessage(String message) {
+        // Just a cooler logger
         getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', Config.prefix()) + message);
     }
     public static String centerMessage(String message, int length) {
+        // I like the text more in the middle
         return " ".repeat((length - ChatColor.stripColor(message).length()) / 2) + message;
     }
 
     @Override
     public void onEnable() {
         main = this;
+        // bStats metrics
         Metrics metrics = new Metrics(this, 27115);
 
+        // Fancy Enable message with version check
         sendMessage("§a--------------------------------------§r");
         sendMessage("§a" + centerMessage("Only Proxy Plugin was enabled!", 38) + "§r");
         sendMessage("§a" + centerMessage("Paper", 38) + "§r");
@@ -60,6 +64,7 @@ public final class Main extends JavaPlugin implements Listener {
     }
     @Override
     public void onDisable() {
+        // Fancy Disable message with version checker
         sendMessage("§a--------------------------------------§r");
         sendMessage("§a" + centerMessage("Only Proxy Plugin was disabled!", 38) + "§r");
         sendMessage("§a" + centerMessage("Paper", 38) + "§r");
@@ -82,7 +87,8 @@ public final class Main extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
 
         String timestamp = new SimpleDateFormat("HH:mm:ss").format(new Date());
-
+        // Create the log file (idk why I write two times log but it should be fine)
+        // log_YYYY-MM-DD.log
         File logFile = new File(logFolder, "log_" + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + ".log");
         if (!logFolder.exists() && !logFile.getParentFile().mkdirs()) {
             sendMessage("§cError by creating the logs folder!");
@@ -105,10 +111,12 @@ public final class Main extends JavaPlugin implements Listener {
         } catch (IOException e) {
             sendMessage("§cError by reading logs file: " + e.getMessage());
         }
+        // Write the log file in the next free line
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true))) {
             if (!lastLine.replace(" ", "").isEmpty()) {
                 writer.newLine();
             }
+            // Log entry message
             writer.write("[" + timestamp + "] [" + (passed ? "PASSED" : "BLOCKED") + "] " + (Config.getBoolean("log.logPlayerName") ? "Player: " + player.getName() + " | " : "") + (Config.getBoolean("log.logIPs") ? "Player IP: " + event.getAddress().getHostAddress() + " | " : "") + (Config.getBoolean("log.logProxyIPs") ? "Proxy IP: " + event.getRealAddress().getHostAddress() : ""));
         } catch (Exception e) {
             sendMessage("§cError by writing to the log file: " + e.getMessage());
@@ -119,28 +127,35 @@ public final class Main extends JavaPlugin implements Listener {
     public void onPlayerLoginEvent(PlayerLoginEvent event) {
         Player player = event.getPlayer();
 
+        // This whole stuff here is not secure, because it only reads the ip that was send from the proxy.
+        // And you must know, that such packtes can be manipulated!
+
         boolean passed = false;
         for (String proxyIP : Config.getList("proxyIPs")) {
             if (proxyIP.contains(":")) {
                 String[] partedIP = proxyIP.split(":");
                 int port;
+                // Check if it is a vaild integer
                 try {
                     port = Integer.parseInt(partedIP[1]);
                 } catch (NumberFormatException e) {
                     sendMessage("§cInvalid port formation in your config.yml by IP: " + proxyIP);
                     continue;
                 }
-                int clientPort = Integer.parseInt(event.getHostname().split(":")[1]); // WARNING: That "port forwarding" detects not perfect the port because it only checks the port that was sent by the client wich can be manipulated!
+                // Check port with the client joined port and check the proxy ip
+                int clientPort = Integer.parseInt(event.getHostname().split(":")[1]);
                 if ((partedIP[0].equalsIgnoreCase(event.getRealAddress().getHostAddress()) || partedIP[0].equalsIgnoreCase(event.getRealAddress().getHostName())) && clientPort == port) {
                     passed = true;
                     break;
                 }
+                // Yea im new in coding
             } else if (proxyIP.equalsIgnoreCase(event.getRealAddress().getHostAddress()) || proxyIP.equalsIgnoreCase(event.getRealAddress().getHostName())) {
                 passed = true;
                 break;
             }
         }
         if (!passed) {
+            // Formatting the kick message
             String kickMsg = ChatColor.translateAlternateColorCodes('&', String.join("\n", Config.getList("kickMessage"))).replace("%prefix%", ChatColor.translateAlternateColorCodes('&', Config.prefix()));
             int counter = 0;
             for (String address : Config.getList("proxyIPs")) {
@@ -152,9 +167,11 @@ public final class Main extends JavaPlugin implements Listener {
         createLog(event, passed);
         if (!Config.getString("console.logging").equalsIgnoreCase("OFF")) {
             if (Config.getString("console.logging").equalsIgnoreCase("OTHER") && passed) return;
+            // The console log message
             sendMessage("§7[" + (passed ? "§aPASSED" : "§cBLOCKED") + "§7] " + (Config.getBoolean("console.logPlayerName") ? "Player: §e" + player.getName() + "§7 | " : "") + (Config.getBoolean("console.logIPs") ? "Player IP: §e" + event.getAddress().getHostAddress() + "§7 | " : "") + (Config.getBoolean("console.logProxyIPs") ? "Proxy IP: §e" + event.getRealAddress().getHostAddress() : ""));
         }
     }
+
     public static Main getInstance() {
         return main;
     }
