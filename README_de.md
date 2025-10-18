@@ -17,7 +17,7 @@
 > gesendet wird, kann manipuliert werden!  
 > Deswegen werde ich in Zukunft keine  
 > weitere große Updates mehr Hochladen!  
-> Kleine Sachen wie Kompatibilität oder bug fixes werden ich noch machen können.
+> Kleine Sachen wie Kompatibilität oder bug fixes werden ich noch weiter machen aber nur auf reports.
 
 **OnlyProxy** ist ein einfaches Minecraft-Plugin für **Spigot/Paper (1.20 – 1.21.8)**.  
 Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über ___deinen___ Proxy joinen.  
