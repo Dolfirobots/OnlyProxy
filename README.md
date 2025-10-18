@@ -15,7 +15,7 @@
 > and block or pass the connection.  
 > But __EVERYTHING__ that were send between your  
 > Server and the Proxy can be manipluated!  
-> Thats why I no longer make updates for this Plugin!
+> Thats why I no longer make big updates for this Plugin!
 
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.8)**.  
 It protects your server by allowing only players who connect through ___your___ proxy.  
