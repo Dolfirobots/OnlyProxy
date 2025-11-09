@@ -24,7 +24,7 @@ It protects your server by allowing only players who connect through ___your___ 
 ---
 
 ## ✨ Features
-- ✅ Supports **Minecraft 1.20 – 1.21.8**
+- ✅ Supports **Minecraft 1.20 – 1.21.10**
 - ✅ Blocks direct connections without a proxy and from proxies that are not yours
 - ✅ **Log system** → All joins are logged
 - ✅ Easy to configure
