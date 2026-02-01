@@ -7,17 +7,7 @@
   
 [![GitHub Dowloads](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)](https://github.com/Dolfirobots/OnlyProxy/releases)
 [![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy?color=Green)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
-[![Discord](https://img.shields.io/discord/1079052573845241877.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/dxZTGpPbkd "Discord")
-  
-> [!WARNING]
-> Ein Only Proxy Plugin bedeutet,  
-> das es die IP abgleicht die von dem Proxy  
-> gesendet wurde.  
-> Aber __ALLES__ was von dem Proxy oder dem Server  
-> gesendet wird, kann manipuliert werden!  
-> Deswegen werde ich in Zukunft keine  
-> weitere große Updates mehr Hochladen!  
-> Kleine Sachen wie Kompatibilität oder bug fixes werden ich noch weiter machen aber nur auf reports.
+[![Discord](https://img.shields.io/discord/1436724374622441556.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/m4hhckJe4v "Discord")
 
 **OnlyProxy** ist ein einfaches Minecraft-Plugin für **Spigot/Paper (1.20 – 1.21.10)**.  
 Es schützt deinen Server, indem es nur Spielern erlaubt zu joinen, die über ___deinen___ Proxy joinen.  
@@ -145,6 +135,18 @@ log_2025-08-25.log:
 
 ---
 
+> [!WARNING]
+> Ein Only Proxy Plugin bedeutet,  
+> das es die IP abgleicht die von dem Proxy  
+> gesendet wurde.  
+> Aber __ALLES__ was von dem Proxy oder dem Server  
+> gesendet wird, kann manipuliert werden!  
+> Deswegen werde ich in Zukunft keine  
+> weitere große Updates mehr Hochladen!  
+> Kleine Sachen wie Kompatibilität oder bug fixes werden ich noch weiter machen aber nur auf reports.
+
+---
+
 ## 📜 Lizenz
 
 Dieses Projekt ist unter der [MIT License](./LICENSE) lizenziert.
@@ -154,8 +156,10 @@ Dieses Projekt ist unter der [MIT License](./LICENSE) lizenziert.
 ## 🤝 Mitwirken
 
 * Fehler gefunden? → [Issue erstellen](https://github.com/Dolfirobots/OnlyProxy/issues)
-* Ideen oder Verbesserungsvorschläge? → Join mein [Discord](https://discord.gg/dxZTGpPbkd "Discord")
+* Ideen oder Verbesserungsvorschläge? → Join mein [Discord](https://discord.gg/m4hhckJe4v "Discord")
 
 ---
+
+## 📋 Stats
 
 [![](https://bstats.org/signatures/bukkit/OnlyProxy.svg)](https://bstats.org/plugin/bukkit/OnlyProxy)
