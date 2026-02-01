@@ -7,16 +7,7 @@
 
 [![GitHub Dowloads](https://shields.io/github/downloads/Dolfirobots/OnlyProxy/total?label=Downloads&logoColor=Green&color=Blue&style=flat)](https://github.com/Dolfirobots/OnlyProxy/releases)
 [![GitHub Release](https://img.shields.io/github/v/release/Dolfirobots/OnlyProxy?color=Green)](https://github.com/Dolfirobots/OnlyProxy/releases "OnlyProxy Releases")
-[![Discord](https://img.shields.io/discord/1436724374622441556.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/nxGMG9PH7n "Discord")
-
-> [!WARNING]
-> A Only Proxy Plugin means, that you  
-> check up the IP that was sended by the proxy  
-> and block or pass the connection.  
-> But __EVERYTHING__ that were send between your  
-> Server and the Proxy can be manipluated!  
-> Thats why I no longer make big updates for this Plugin!
-> I will continue to do small things like compatibility or bug fixes but only based on reports.
+[![Discord](https://img.shields.io/discord/1436724374622441556.svg?logo=discord&logoColor=Green&color=Blue&labelColor=Green&label=Discord)](https://discord.gg/m4hhckJe4v "Discord")
 
 **OnlyProxy** is a simple Minecraft plugin for **Spigot/Paper (1.20 – 1.21.11)**.  
 It protects your server by allowing only players who connect through ___your___ proxy.  
@@ -148,6 +139,17 @@ log_2025-08-25.log:
 ```
 ---
 
+> [!WARNING]
+> A Only Proxy Plugin means, that you  
+> check up the IP that was sended by the proxy  
+> and block or pass the connection.  
+> But __EVERYTHING__ that were send between your  
+> Server and the Proxy can be manipluated!  
+> Thats why I no longer make big updates for this Plugin!
+> I will continue to do small things like compatibility or bug fixes but only based on reports.
+
+---
+
 ## 📜 License
 
 This project is licensed under the [MIT License](./LICENSE).
@@ -157,8 +159,10 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 🤝 Contributing
 
 * Found a bug? → [Create an issue](https://github.com/Dolfirobots/OnlyProxy/issues)  
-* Have ideas or suggestions? → Join my [Discord](https://discord.gg/dxZTGpPbkd "Discord")
+* Have ideas or suggestions? → Join my [Discord](https://discord.gg/m4hhckJe4v "Discord")
 
 ---
+
+## 📋 Stats
 
 [![](https://bstats.org/signatures/bukkit/OnlyProxy.svg)](https://bstats.org/plugin/bukkit/OnlyProxy)
